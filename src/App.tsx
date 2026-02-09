@@ -10,6 +10,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import ProductListPage from "./pages/ProductListPage";
 import FormPage from "./pages/FormPage";
+import RHFPage from "./pages/RHFPage";
 
 type Teacher = {
   name: string;
@@ -53,6 +54,7 @@ function App() {
         <Route path="/product/:slug" element={<ProductDetailPage />} />
 
         <Route path="/form" element={<FormPage />} />
+        <Route path="/rhf" element={<RHFPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
