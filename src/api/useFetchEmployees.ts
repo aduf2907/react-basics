@@ -1,8 +1,8 @@
 import { useState } from "react";
-import axios from "axios";
+import { axiosInstance } from "../lib/axios";
 
 type EmployeeResponse = {
-  id: number;
+  id: string;
   name: string;
 };
 
@@ -15,9 +15,8 @@ export const useFetchEmployees = () => {
     try {
       setEmployeesIsLoading(true); // toggle mode loading on
 
-      const response = await axios.get<EmployeeResponse[]>(
-        "http://localhost:2000/employees",
-      );
+      const response =
+        await axiosInstance.get<EmployeeResponse[]>("/employees");
 
       setEmployees(response.data);
     } catch (error) {
